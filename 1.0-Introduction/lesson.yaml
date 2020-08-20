@@ -47,6 +47,9 @@
 
 - Class: text
   Output: Using R this way only displays the results in the console. But, what if you want to use this result in further calculations? For this you need to ask R to save the result in "memory:" R will assign the result to an named object ...  
+
+- Class: text
+  Output: Note, R is case-sensitive so make sure you use the right case. For example, "eggs" is different from "Eggs". "eggs" is start with lower case "e" while "Eggs" start with "E". So beware.  
   
 - Class: text
   Output: So instead of repeating the calculation every time we want the result, we can create an object called "eggs" and assign the calculation result to it. To assign a value to an object in R we use the "assignement operator" (<-).
