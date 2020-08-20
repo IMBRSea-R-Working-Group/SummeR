@@ -20,11 +20,11 @@ It will ask
 
 | Would you like to continue with one of these lessons?
 
-1: R Programming E Basic Building Blocks
+1: <some lesson>
 
 2: No. Let me start something new.
 choose 2
 
-Then choose the imbrseaR course and then the Introduction lesson. Note that if you would like to exit the course at any stage type bye() at the R prompt >.
+Then choose the IMBRSea-R-Working-Group-SummeR course and then the Introduction lesson. Note that if you would like to exit the course at any stage type bye() at the R prompt >.
 
 Have fun and please send feedback on what you found useful or not or otherwise.
