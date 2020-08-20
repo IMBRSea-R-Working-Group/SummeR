@@ -224,6 +224,9 @@
 - Class: text
   Output: Note that the output from the summary is different for each class of vector and will give you a summary according to each type.
   
-
+- Class: figure
+  Output: ....
+  Figure: cleanup.R 
+  
 - Class: text
   Output: Congratulations!! You have finished this lesson. Feel free to come back whenever you want and do it again. Now you are already getting familiar with the R language and how it works. Next lesson will be about data visualization and graphical analysis. Cheers!  
