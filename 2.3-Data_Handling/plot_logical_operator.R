@@ -1,3 +1,4 @@
+invisible(dev.off()) 
 plot_logical <- function(){
   plot.new()
   plot(1:10, 1:10, type = "n", bty= "n", axes = FALSE, ann = FALSE)
