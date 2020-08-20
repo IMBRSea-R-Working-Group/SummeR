@@ -54,9 +54,6 @@
   Hint: The answer is in the question.   
 
 - Class: text
-  Output: Good Job!! Alternatively, you can look at the 'Files' pane in the bottom right corner of RStudio. Can you see it?
-
-- Class: text
   Output: Now, since we know how to set our working directory, how to get access to the list of the files in our directory, we can now read in the file we want to work on. 
   
 - Class: text
@@ -78,7 +75,7 @@
 - Class: cmd_question
   Output: Read the data found in the working directory and add the extra argument so that we data is correctly enter in 'R'.
   CorrectAnswer: read.table("mud_env.txt", header = TRUE)
-  AnswerTests: any_of_exprs('read.table("mud_env.txt", header = TRUE)', 'read.table(file = "mud_env.txt", header = TRUE)')
+  AnswerTests: any_of_exprs('read.table("mud_env.txt", header = TRUE)', 'read.table(file = "mud_env.txt", header = TRUE)', 'read.table(file = "mud_env.txt", header = T)')
   Hint: hint   
 
 - Class: text
@@ -90,7 +87,7 @@
 - Class: cmd_question
   Output: Read in the data as in the previous question but this time assign the data to 'mud_env' using what you learnt from the other lesson.
   CorrectAnswer: mud_env <- read.table("mud_env.txt", header = TRUE)
-  AnswerTests: any_of_exprs('mud_env <- read.table("mud_env.txt", header = TRUE)', 'mud_env = read.table("mud_env.txt", header = TRUE)', 'mud_env = read.table(file = "mud_env.txt", header = TRUE)', 'mud_env <- read.table(file = "mud_env.txt", header = TRUE)') 
+  AnswerTests: any_of_exprs('mud_env <- read.table("mud_env.txt", header = TRUE)', 'mud_env = read.table("mud_env.txt", header = TRUE)', 'mud_env = read.table(file = "mud_env.txt", header = TRUE)', 'mud_env <- read.table(file = "mud_env.txt", header = TRUE)', 'mud_env <- read.table(file = "mud_env.txt", header = T)', 'mud_env = read.table(file = "mud_env.txt", header = T)') 
   Hint: hint 
   
 - Class: cmd_question
@@ -104,7 +101,7 @@
 - Class: cmd_question
   Output: Read in the 'Fish_landings.csv' file in your working directory using 'read.csv()' command. Store the data as 'fish_data' and make sure to include a header. 
   CorrectAnswer: fish_data <- read.csv("Fish_landings.csv", header = TRUE)
-  AnswerTests: any_of_exprs('fish_data <- read.csv("Fish_landings.csv", header = TRUE)', 'fish_data = read.csv("Fish_landings.csv", header = TRUE)', 'fish_data = read.csv(file = "Fish_landings.csv", header = TRUE)', 'fish_data <- read.csv(file = "Fish_landings.csv", header = TRUE)') 
+  AnswerTests: any_of_exprs('fish_data <- read.csv("Fish_landings.csv", header = TRUE)', 'fish_data = read.csv("Fish_landings.csv", header = TRUE)', 'fish_data = read.csv(file = "Fish_landings.csv", header = TRUE)', 'fish_data <- read.csv(file = "Fish_landings.csv", header = TRUE)', 'fish_data <- read.csv(file = "Fish_landings.csv", header = T)', 'fish_data = read.csv(file = "Fish_landings.csv", header = T)') 
   Hint: Remember to put header = TRUE as an extra argument. 
   
 - Class: figure
