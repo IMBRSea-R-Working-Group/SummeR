@@ -1,7 +1,7 @@
 plot_logical <- function(){
   plot.new()
   plot(1:10, 1:10, type = "n", bty= "n", axes = FALSE, ann = FALSE)
-  words <- c("Greater than", "less than", "Greater than or equal to", "less than or equal to", "Equal to", "Not equal to")
+  words <- c("Greater than", "Less than", "Greater than or equal to", "Less than or equal to", "Equal to", "Not equal to")
   logicals <- c(">", "<", ">=", "<=", "==", "!=")
   
   usr = par("usr")
