@@ -9,6 +9,9 @@
 #  )
 #}
 
+olddir <- getwd()
+assign("olddir", olddir, envir = .GlobalEnv)
+
 setwd(file.path(find.package("swirl"),"Courses", "SummeR", "3.0-Data_Exploration"))
 reeffish <- read.csv("ReefFish.csv")
 # reeffish<- read.csv(file.path(.get_course_path(), "SummeR", "Data_exploration", "ReefFish.csv"))
