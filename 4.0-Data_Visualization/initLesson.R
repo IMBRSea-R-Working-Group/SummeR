@@ -9,6 +9,6 @@
 #  )
 #}
 
-setwd(file.path(find.package("swirl"),"Courses", "SummeR", "4.0-Data_Visualisation"))
+setwd(file.path(find.package("swirl"),"Courses", "SummeR", "4.0-Data_Visualization"))
 reeffish <- read.csv("ReefFish.csv")
 #reeffish<- read.csv(file.path(.get_course_path(), "SummeR", "4.0-Data_Visualisation", "ReefFish.csv"))
