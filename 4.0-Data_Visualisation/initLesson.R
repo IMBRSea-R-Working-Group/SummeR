@@ -12,6 +12,6 @@
 olddir <- getwd()
 assign("olddir", olddir, envir = .GlobalEnv)
 
-setwd(file.path(find.package("swirl"),"Courses", "SummeR", "4.0-Data_Visualization"))
+setwd(file.path(find.package("swirl"),"Courses", "SummeR", "4.0-Data_Visualisation"))
 reeffish <- read.csv("ReefFish.csv")
 #reeffish<- read.csv(file.path(.get_course_path(), "SummeR", "4.0-Data_Visualisation", "ReefFish.csv"))
