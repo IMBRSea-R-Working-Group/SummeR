@@ -1,7 +1,7 @@
 - Class: meta
   Course: R for Marine Research
   Lesson: Data visualisation
-  Author: Valentin Geslin & Colin Minto
+  Author: Valentin Geslin & Coilín Minto
   Type: Standard
   Organization: IMBRSea
   Version: 2.4.5
@@ -31,16 +31,16 @@
   Output: Let's now start to visualise its variables.
   
 - Class: cmd_question
-  Output: We will begin with the most simple form of plot in R by displaying the value of abundance in the same order as they appear in the data frame by using the command plot(reeffish$Abundance)
+  Output: We will begin with the most simple form of plot in R by displaying the values of abundance in the same order as they appear in the data frame by using the command plot(reeffish$Abundance)
   CorrectAnswer: plot(reeffish$Abundance) 
   AnswerTests: any_of_exprs('plot(reeffish$Abundance)', 'plot(reeffish $ Abundance)')
   Hint: Type plot(reeffish$Abundance)
 
 - Class: text
-  Output: That is probably your first plot in R. Congratulation! And if not, still well done!
+  Output: That is probably your first plot in R. Congratulations! And if not, still well done!
 
 - Class: text
-  Output: But as you can see it is not super informative for us as it shows only the different values taken by the variable "Abundance" displayed in the same order as they appear on this column.
+  Output: But as you can see, it is not super informative for us as it shows only the different values taken by the variable "Abundance" displayed in the same order as they appear on this column.
 
 - Class: cmd_question
   Output: To make it more informative we will display a different color by species. Type plot(reeffish$Observation, reeffish$Abundance, col=c("green", "blue", "red"), pch = 19)
@@ -55,16 +55,16 @@
   Hint: Type legend(1, 95, legend = c("GreenFish", "BlueFish", "RedFish"), pch = 19, col = c("green", "blue", "red"), box.lty=0)
 
 - Class: text
-  Output: So each point in the plot represent the abundance of one of the species (RedFish, GreenFish, BlueFish) for each record (you can count by yourself, it should have 26 points on your graph).
+  Output: So each point in the plot represents the abundance of one of the species (RedFish, GreenFish, BlueFish) for each record (you can count by yourself, it should have 26 points on your graph).
 
 - Class: cmd_question
-  Output: Then we can try to visualise more about Abundance. For exemple we can show the distribution of this univariate variable by creating an histogram. Write hist(reeffish$Abundance)
+  Output: Then we can try to visualise more about Abundance. For example we can show the distribution of this univariate variable by creating a histogram. Write hist(reeffish$Abundance).
   CorrectAnswer: hist(reeffish$Abundance) 
   AnswerTests: omnitest(correctExpr='hist(reeffish$Abundance)')
   Hint: Type hist(reeffish$Abundance)
   
 - Class: text
-  Output: Congratulation! You should see a histogram on the Plots pane displaying the distribution of the Abundance's value.
+  Output: Congratulations! You should see a histogram on the Plots pane displaying the distribution of the Abundance values.
 
 - Class: text
   Output: Now let's customize this graph!
@@ -82,7 +82,7 @@
   Hint: Type lines(density(reeffish$Abundance), col = "red")
   
 - Class: text
-  Output: Great! As you can see we changed the number of breaks (5) by which our data are divided, the color of the bar, the limits of x axis and we added a red line displaying the empirical density of the data.
+  Output: Great! As you can see, we changed the number of breaks (5) by which our data are divided, the color of the bar, the limits of the x axis and we added a red line displaying the empirical density of the data.
 
 - Class: text
   Output: Let's now have a look at the relation between a continous variable (Abundance) and a categorical one (Site).
@@ -94,13 +94,13 @@
   Hint: Type boxplot(reeffish$Abundance ~ reeffish$Site)
   
 - Class: text
-  Output: The boxplots are really good graph to illustrate categorical variables as they show the mean (dark bar), the minimum and maximum values (each extremities of the dash line), and the first and third quartiles (the lower and higher limit of the box).
+  Output: The boxplots are really good graphs to illustrate categorical variables as they show the mean (dark bar), the minimum and maximum values (both extremities of the dashed line), and the first and third quartiles (the lower and higher limit of the box).
 
 - Class: text
   Output: Finally let's see how we can export the plot we created with R.
 
 - Class: text
-  Output: There are many possibilities and many format to do so. Here we will only cover the .png and .jpeg files.
+  Output: There are many possibilities and many formats to do so. Here we will only cover the .png and .jpeg files.
 
 - Class: cmd_question
   Output: First we should create an object containing our plot. Let's type plot1 <- boxplot(reeffish$Abundance ~ reeffish$Site)
@@ -121,7 +121,7 @@
   Hint: Type jpeg(filename = "plot1.jpg", width = 480, height = 480, units = "px")
    
 - Class: text
-  Output: We reached the end of this introductory course on data visualisation with R. Off course R have much more possibilities to illustrate data.
+  Output: We reached the end of this introductory course on data visualisation with R. Of course R has much more possibilities to visualise data.
   
 - Class: video
   Output: If you want to learn more about data visualisation you can have a look to the package ggplot2.
