@@ -3,12 +3,14 @@
       # the user's working directory and thus be accessible to them
       # throughout the lesson.
 
-.get_course_path <- function(){
-  tryCatch(swirl:::swirl_courses_dir(),
-           error = function(c) {file.path(find.package("swirl"),"Courses", "SummeR)}
-  )
-}
+#.get_course_path <- function(){
+#  tryCatch(swirl:::swirl_courses_dir(),
+#          error = function(c) {file.path(find.package("swirl"),"Courses", "SummeR)}
+#  )
+#}
 
-reeffish<- read.csv(file.path(.get_course_path(), "SummeR", "Data_exploration", "ReefFish.csv"))
+setwd(file.path(find.package("swirl"),"Courses", "SummeR"))
+reeffish <- read.csv("ReefFish.csv")
+# reeffish<- read.csv(file.path(.get_course_path(), "SummeR", "Data_exploration", "ReefFish.csv"))
                     
 
