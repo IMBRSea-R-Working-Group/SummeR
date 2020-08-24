@@ -7,67 +7,94 @@
   Version: 2.4.5
 
 - Class: text 
-  Output: In the previous lesson, you learned how to read in data in different formats (txt and csv) in R. That's great, but we can do better. In this tutorial, you will learn how to create simple data structures, operate on them, and perform basic subsetting.
+  Output: In the previous lesson, you learned how to read in data in two different text formats (txt and csv) in R. That's great, but we can do more. In this lesson, you will learn how to create simple R objects, operate on them, and perform basic subsetting.
   
 - Class: text 
-  Output: At the end, you should be able to do some basic data manipulation in R. Are you ready? 
+  Output: At the end of this lesson you should be able to do some basic data manipulation in R. Are you ready? 
   
 - Class: text 
-  Output: Now that you have our data read into R, you can do some manipulation. We will keep things simple so that you get the ideas/concepts easily.
+  Output: "Once you have read data in R, you can manipulate them: make copies, rearrange them, subset them ... You can also create objects directly in R and manipulate them. In this lesson we will keep things simple so that you get the ideas/concepts easily."
   
 - Class: text 
-  Output: The first concept in data manipulation you will learn in R will be on how to create a SIMPLE VECTOR or sequence of numbers or character. 
+  Output: "The first data manipulation trick you will learn here will be to create a SIMPLE VECTOR. In R, a vector is a sequence of identical elements: integers, real numbers, character strings, logical values ..." 
   
 - Class: text 
-  Output: For example, if I tell you to list the first five numbers we have, how do you go about that in R? In this case, we are talking about a sequence of numbers right?
+  Output: For example, let's say you wish to list the first ten integers starting from 1 in ascending order. How do you go about doing that in R? In this case, we are talking about a sequence of integers right? 
   
 - Class: text 
-  Output: R is simple enough that it provides us with what is called a sequence function named 'seq(from = , to = , by = )'. Between the parentheses, you can place whatever number you want. 
+  Output: R provides us with what is called a sequence generation function named 'seq()'. Its most basic arguments are "from =", "to =", and "by =". These can be set to any real numbers you want (well, as long as it makes sense ...). 
   
 - Class: text 
-  Output: Let's give a concrete example to see this in action, say you want to generate the first ten numbers - '1:10', you can do this by using the 'seq()' command.
+  Output: Let's give a concrete example to see this in action, how can we use 'seq()' to get our list of the first ten integers starting from 1 and in ascending order?.
   
 - Class: cmd_question
-  Output: Generate a number sequence '1' to '10' using 'seq(from = 1, to = 10, by = 1)' in the command line.
+  Output: Generate a sequence of integers from '1' to '10' with an increment of 1 using 'seq(from = 1, to = 10, by = 1)' at the prompt.
   CorrectAnswer: seq(from = 1, to = 10, by = 1)
   AnswerTests: any_of_exprs('seq(from = 1, to = 10, by = 1)', 'seq(0, 10, 1)') 
   Hint: The answer is in the question. 
   
 - Class: cmd_question
-  Output: Now generate a number sequence '10' to '100' using 'seq()' in the command line and assign the numbers to an object 'x'.
+  Output: As you can see this call basically mean "Generate a sequence of integers from 1 to 10 with an increment of 1". Now generate a sequence of all the integers from '10' to '100' using 'seq()' and assign the resulting vector to an object called 'x'.
   CorrectAnswer: x <- seq(from = 10, to = 100, by = 1)
   AnswerTests: any_of_exprs('x = seq(from = 10, to = 100, by = 1)', 'x <- seq(from = 10, to = 100, by = 1)', 'x = seq(10, 100, 1)', 'x <- seq(10, 100, 1)') 
   Hint: The answer is in the question. 
-  
-- Class: text 
-  Output: Alternatively, you can create this vector using ':' command between the numbers. Just type '1:10' and you get the same result as above! 
+
 
 - Class: cmd_question
-  Output: Generate number sequence '1' to '10' using ':' in the command line.
+  Output: Before moving on, have a look at what is stored in 'x'.
+  AnswerTests: x 
+  Hint: Just type the name of the object and enter at the prompt. 
+
+  
+- Class: text 
+  Output: Alternatively, you can create sequences using the colon operator ':'  between two integers. Just type '1:10' and you also get the sequence of integers from '1' to '10' with an increment of 1 printent to the console! 
+
+- Class: cmd_question
+  Output: Generate the sequence of integers from '1' to '10' using ':' at the prompt.
   CorrectAnswer: 1:10
   AnswerTests: omnitest(correctExpr = '1:10') 
   Hint: The answer is in the question. 
+
+- Class: text 
+  Output: Note that you can also create sequences in decreasing order. For example, let's now create the sequence of all integeres from 10 to 1 using the colon operator. 
+
+- Class: cmd_question
+  Output: Generate the sequence of integers from '10' to '1' using ':' between them at the prompt.
+  CorrectAnswer: 1:10
+  AnswerTests: omnitest(correctExpr = '10:1') 
+  Hint: The answer is in the question. 
+
+- Class: text 
+  Output: This can also be done by setting the arguments to 'seq()' correctly. Note that your increment should be 'by = -1'. 
+
+- Class: cmd_question
+  Output: Generate the sequence of integers from '10' to '1' using the 'seq()' function. 
+  CorrectAnswer: seq(from = 10, to = 1, by = -1)
+  AnswerTests: any_of_exprs('seq(from = 10, to = 1, by = -1)', 'seq(10, 1, -1)') 
+  Hint: Try with a negative increment such as 'seq(from = 10, to = 1, by = -1)' 
+
+
+
+- Class: text 
+  Output: One thing you can do with 'seq()' that is not possible with the colon operator is that you can use the 'by =' argument to change the increment between the steps in the sequence. 
   
 - Class: text 
-  Output: The only reason you the need the 'seq()' is that you can modify how many steps you want from the sequence using the 'by =' argument. 
-  
-- Class: text 
-  Output: For example, say you want to generate a number sequence '1' to '10' with increment of '2', meaning the numbers change 'by' 2. We can do that using 'seq(from = 1, to = 10, by = 2)'. Let's try that in the console. 
+  Output: For example, say you want to generate the sequence of integers from '1' to '10' with increments of '2', meaning that '2' is added to the number at each step of the sequence. We can do that by typing 'seq(from = 1, to = 10, by = 2)' and enter at the command prompt.
   
 - Class: cmd_question
-  Output: Generate number sequence '1' to '10' by an increment of '2'
+  Output: Generate a sequence of integers from '1' to '10' with an increment of '2' at each step.
   CorrectAnswer: seq(from = 1, to = 10, by = 2)
   AnswerTests: any_of_exprs('seq(from = 1, to = 10, by = 2)', 'seq(1, 10, 2)') 
   Hint: The answer is in the question. 
   
 - Class: text
-  Output: Now that you understand how to generate a sequence, let's learn how to generate strings with characters. A string/character is shown with the quotation symbol "< STRING >"
+  Output: Now that you understand how to generate a sequence of integers, let's learn how to generate characters strings vector. A character string needs to be defined with quotes. You have done this before. Indeed, the name of the files you have read from your computer (e.g. "Fish_landings.csv", "mud_env.txt") were character strings.
   
 - Class: text
-  Output: To create a character sequence in R you will have to manually write the string. You can do that using the 'c()' command wich means either 'concatenate' or simple 'create'. 
+  Output: A generic function to create vectors in R is the 'c()' function that combines all of the arguments it is given in a vector. Note that we could have used it to create the sequences of integers in the previous section but we would have needed to write out every single integer ... not practical at all. However, to create short vectors it is rather useful. Here we need to manually write the character strings we wish to put in the vector.
   
 - Class: text
-  Output: Say, for example you want to create a vector of marine species, Then you can use 'c("Whale", "Goby", "Ray", "Turtle")'. Let's create this in the console.
+  Output: Say, for example you want to create a vector of some marine species common names. Each name is a character string, and we combine them all together in a single vector. Then you can use 'c("Whale", "Goby", "Ray", "Turtle")'. Let's create this in the console.
   
 - Class: cmd_question
   Output: Generate a vector of marine species using 'c()' containing "Whale", "Goby", "Ray", "Turtle". Assign the object to 'marine_species'
@@ -79,44 +106,47 @@
   Output: Now, let's move to another useful data handling concept that is crucial in R. It is called INDEXING. 
   
 - Class: text
-  Output: Indexing is basically the way you get individual objects or a group of objects from a vector in R. Remember our 'marine_species' example. If you want to get only the first species from the object, how do you do that in R?
+  Output: Indexing basically allows you to access an individual element - or a group of elements - from an R object. Remember our 'marine_species' vector? If you only want to get the name of the first species in the vector, how do you do that in R?
   
 - Class: text
-  Output: Well it turns out that R follows a simple pattern of Indexing which if you understand, can make your life easier. Let's put this into action and see if you can get the first object.
+  Output: Well it turns out that R follows a simple Indexing system which, if you understand it, will make your life easier. It allows us to acces a specific location in an object (e.g. the first element of a vector). Let's put this into action and see if you can get the first element in the 'marine_species' vector.
   
 - Class: text
-  Output: To index in R, you use the block parentheses '[]' in front of the object we want to index. For example 'marine_species[]'
+  Output: To use indexation in R, use the square brackets '[]' immediately following the name of the object you want to index.  
   
 - Class: text
-  Output: Since we know the first ('1') animals is 'Whale' we can get that by typing the number '1' in between the block parentheses. Let's try that at the console prompt.
+  Output: If you do not specify anything in the square brackets you will get the whole object. However, if you specifiy only part of the object you will only get that part. 
+  
+- Class: text
+  Output: For example 'marine_species[]' is a vector, so its elements are indexed with a sequence of integers from '1' for the first element in the vector to a value equal to the number of elements in the vector for the last one.
   
 - Class: figure
   Output: See the illustrated concept in the plot viewer.
   Figure: number_index_illustrated.R
 
 - Class: cmd_question
-  Output: Get the first animal in the vector 'marine_species' using the '[]' and the number '1' inside the bracket.
+  Output: Get the first marine species name from the 'marine_species' vector using the '[]' and the number '1' inside the bracket.
   CorrectAnswer: marine_species[1]
   AnswerTests: omnitest(correctExpr = 'marine_species[1]') 
   Hint: The answer is in the question. 
   
 - Class: cmd_question
-  Output: Get the last animal - 'Turtle' in the vector 'marine_species' using the '[]' and the number '4' inside the bracket.
+  Output: Get the last marine species name from the 'marine_species' vector  using the '[]' and the number '4' inside the bracket.
   CorrectAnswer: marine_species[4]
   AnswerTests: omnitest(correctExpr = 'marine_species[4]') 
   Hint: The answer is in the question.
 
 - Class: text
-  Output: Good job. You can even get two or more objects at the same time with method. For example, say we want the first and the last animal, then the index is 1 and 4.   
+  Output: Good job. You can even get two or more elements at the same time with the Indexing system. One way to do this is to put a vector of integers in the square brackets. For example, say we want the second and the third marine species names from our vector, then the indices we are looking for are 2 and 3, but at the same time.   
   
 - Class: text
-  Output: To that in R, we need to place these numbers in the 'c()' command for R to know that we are dealing with more than one index. So in this case, we use '[c(1,4)]'
+  Output: To do that in R, we first use the 'c()' function to create a vector with integers '2' and '3' and we put that vector in the square brackets. So in this case, we use '[c(2,3)]' after the name of the 'marine_species' vector.
 
 - Class: cmd_question
-  Output: Get the second and third animal - 'Goby' and 'Ray' in the vector 'marine_species' using the '[]' and the number corresponding to the animal.
+  Output: Get the second and third marine species names from the 'marine_species' vector using the '[]' and a vector of integers corresponding to desired locations.
   CorrectAnswer: marine_species[c(2,3)]
-  AnswerTests: omnitest(correctExpr = 'marine_species[c(2,3)]') 
-  Hint: Type the number inside the square parentheses '[]'. 
+  AnswerTests: any_of_exprs('marine_species[c(2,3)]', 'marine_species[2:3]', 'marine_species[seq(2, 3, 1)]', 'marine_species[seq(from = 2, to = 3, by = 1)]') 
+  Hint: Type a vector of integers corresponding to desired locations inside the square parentheses '[]'. 
   
 - Class: text
   Output: That will do for now. The next lesson will look at a new technique that will greatly improve your data handling skills - it is called "LOGICAL INDEXING".
