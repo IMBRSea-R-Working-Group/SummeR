@@ -109,7 +109,7 @@
   Hint: Type; class(hatch)  
   
 - Class: text
-  Output: The "hatch" object is thus of class numeric. Whenever we are writing things between the brackets in a function call were are giving values to that function's arguments. These arguments give us a lot of flexibility in how we use functions in R. You will learn more about these later. For now, let's create an object with character class.
+  Output: The "hatch" object is thus of class numeric. Now, let's create an object with character class.
   
 - Class: cmd_question
   Output:  Type the name of the species in between quotes ("") and assign it to a object called "sp". The species name is Caretta caretta. 
