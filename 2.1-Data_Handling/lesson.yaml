@@ -7,45 +7,46 @@
   Version: 2.4.5
   
 - Class: text
-  Output: Welcome to the Data Handling lesson!  This lesson will be split into three parts to give you an easy ride to the wonderful world of R!
+  Output: Welcome to the Data Handling lesson! This lesson will be split into three parts to give you an easy ride to the wonderful world of R!
 
 - Class: text
   Output: In this lesson, you will learn how to set the working directory, how to import and export data.
 
 - Class: text
-  Output: We start with setting the working directory. The working directory is the local folder on your computer from which you import a dataset and where your work can be saved. You can only have one working directory active at a given time.
+  Output: We start with setting the working directory. The working directory is the default local folder on your computer from which you import a dataset and where your work can be saved. You can only have one working directory active at any given time.
 
 - Class: text
-  Output: To see your current working directory, use getwd().
+  Output: The 'getwd()' function tells us what our current working directory is.
 
 - Class: cmd_question
-  Output: Verify in which working directory your work is located now.
+  Output: Verify what is the current working directory.
   CorrectAnswer: getwd()
   AnswerTests: omnitest(correctExpr='getwd()')
   Hint: Look at the command given in the previous line.
   
+
 - Class: figure
   Output: You can see the list of folders in your current directory below. Can you see the folders':' ?
   Figure: Directory_tree.R
   FigureType: new
   
 - Class: text
-  Output: Similarly, you can set a working directory to your preferred location using 'setwd(<Your preferred location>)'. In between the brackets, you place the folder path. In windows you do something like "C:/Ocean/IMBRSea/Rcourse". In macs OS and Linux you can use "~/Ocean/IMBRSea/Rcourse" assuming Rcourse is a real folder in your machine. Okay?
+  Output: Similarly, you can set the working directory to a desired location using 'setwd(<Your desired location>)'. Were you replace <Your desired location> with the path to your desired folder between quotes. In windows you do something like "C:/Ocean/IMBRSea/Rcourse". In Mac OS and Linux you can use "~/Ocean/IMBRSea/Rcourse" assuming Rcourse is a real folder on your machine. Okay?
   
 - Class: cmd_question
-  Output: There is a directory called '2.1-Data_Handling' in the current directory you are in. Set this directory to be your new current directory.
+  Output: There is a directory called '2.1-Data_Handling' in the current working directory. Ask R to make this directory the new current working directory.
   CorrectAnswer: setwd("2.1-Data_Handling")
   AnswerTests: any_of_exprs('setwd("2.1-Data_Handling")', 'setwd("2.1-Data_Handling/")')
   Hint: Look at the command given in the previous line.
 
 - Class: text
-  Output: We can now import data. R can read in many file types. The most common types you will use during the IMBRSea classes are txt, csv and excel.
+  Output: We can now input data. R can read many file types. The most common types you will use during the IMBRSea classes are .txt and .csv, both of which are text files. You might also need to work with spreadsheets (e.g. excel).
 
 - Class: text
-  Output: But first let's find where the data is currently placed. We can do that by checking all the files located in the current directory. 
+  Output: Before we input data from a file, let's first find out what data files are available in our current working directory. We can do this by asking R for the names of all the files located in the current working directory. 
 
 - Class: text
-  Output: To do that, try running 'list.files()' on the console. 
+  Output: To do that, try the 'list.files()' function.
 
 - Class: cmd_question
   Output: Check the files present in the current directory using list.files().
@@ -54,10 +55,10 @@
   Hint: The answer is in the question.   
 
 - Class: text
-  Output: Now, since we know how to set our working directory, how to get access to the list of the files in our directory, we can now read in the file we want to work on. 
+  Output: Now that we know how to set our working directory and get the list of files available in that directory, we are just a step away from reading (inputing) one of these files into R in order to work on the data it contains! 
   
 - Class: text
-  Output: We will start by reading in a text file ('.txt'). The command to use is 'read.table(file = " ")', with the text file you want to import between quotation marks. The name of the file we want to read in is 'mud_env.txt'.
+  Output: We will start by reading in a text file ('.txt'). The command to use is 'read.table(file = " ")', with the text file you want to import as an argument between the quotation marks. The name of the file we want to read in is 'mud_env.txt'.
 
 
 - Class: cmd_question
@@ -66,43 +67,35 @@
   AnswerTests: any_of_exprs('read.table("mud_env.txt")', 'read.table(file = "mud_env.txt")')
   Hint: Put the file name inside the parentheses of the read.table(). Remember to place quotation marks "".
 
-- Class: text
-  Output: We are almost done with reading in data. The data we read is fine but we still have some wrong header in the output. We need to correct this. We can do so by adding an extra argument to the function 'read.table()'.
 
 - Class: text
-  Output: The argument we need is 'header = TRUE'. So re-run the previous question but this time, add the extra argument.
+  Output: At this point R has read the data file and printed the result to the console. However, we cannot work with this data as it has not been assigned to an object. It would be nice to have this data exist in the environment so that we could start working on it! 
+
+
+- Class: text
+  Output: So, let's assign this data to an R object so we can do some fantastic things with it. We have used the assignement operator in the Introduction lesson, and we will now need it again.
 
 - Class: cmd_question
-  Output: Read the data found in the working directory and add the extra argument so that we data is correctly enter in 'R'.
-  CorrectAnswer: read.table("mud_env.txt", header = TRUE)
-  AnswerTests: any_of_exprs('read.table("mud_env.txt", header = TRUE)', 'read.table(file = "mud_env.txt", header = TRUE)', 'read.table(file = "mud_env.txt", header = T)')
-  Hint: hint   
-
-- Class: text
-  Output: One last point. Since we already imported the data, it would be nice to keep this data in the session to that we can start working on it. Isn't it?
-
-- Class: text
-  Output: So, let assign this data into an R object so we can do some fantastic things with it. To do so, we use the ideas from the previous lesson on assignment.
-
-- Class: cmd_question
-  Output: Read in the data as in the previous question but this time assign the data to 'mud_env' using what you learnt from the other lesson.
+  Output: Read in the data as in the previous question but this time, rather then letting R print the results to the console, assign the result to an object called 'mud_env' using the assignement operator.
   CorrectAnswer: mud_env <- read.table("mud_env.txt", header = TRUE)
-  AnswerTests: any_of_exprs('mud_env <- read.table("mud_env.txt", header = TRUE)', 'mud_env = read.table("mud_env.txt", header = TRUE)', 'mud_env = read.table(file = "mud_env.txt", header = TRUE)', 'mud_env <- read.table(file = "mud_env.txt", header = TRUE)', 'mud_env <- read.table(file = "mud_env.txt", header = T)', 'mud_env = read.table(file = "mud_env.txt", header = T)') 
+  AnswerTests: any_of_exprs('mud_env <- read.table("mud_env.txt")', 'mud_env = read.table("mud_env.txt")', 'mud_env = read.table(file = "mud_env.txt")', 'mud_env <- read.table(file = "mud_env.txt")', 'mud_env <- read.table(file = "mud_env.txt")', 'mud_env = read.table(file = "mud_env.txt")') 
   Hint: hint 
-  
+
+
 - Class: cmd_question
   Output: View your data by typing 'View(mud_env)' in the console.
   CorrectAnswer: View(mud_env)
   AnswerTests: omnitest(correctExpr = 'View(mud_env)')
   
 - Class: text
-  Output: Similarly, you can read in other data types like csv - which stands for "comma seperated file" using the R command 'read.csv("<name of data>")'. Why don't you try to read in the fish landing data in your directory before we close? 
+  Output: Similarly, we can read in other file formats like .csv - which stands for "comma seperated values" - another type of text file where the columns of the table are separated by commas (rather then whitespace as is the default in the .txt format). To do this we can use the 'read.csv("<name of data>") command, again with the name of the data file between quotes given as an argument. Why don't you try to read in the fish landing data in your directory? 
+
 
 - Class: cmd_question
-  Output: Read in the 'Fish_landings.csv' file in your working directory using 'read.csv()' command. Store the data as 'fish_data' and make sure to include a header. 
-  CorrectAnswer: fish_data <- read.csv("Fish_landings.csv", header = TRUE)
-  AnswerTests: any_of_exprs('fish_data <- read.csv("Fish_landings.csv", header = TRUE)', 'fish_data = read.csv("Fish_landings.csv", header = TRUE)', 'fish_data = read.csv(file = "Fish_landings.csv", header = TRUE)', 'fish_data <- read.csv(file = "Fish_landings.csv", header = TRUE)', 'fish_data <- read.csv(file = "Fish_landings.csv", header = T)', 'fish_data = read.csv(file = "Fish_landings.csv", header = T)') 
-  Hint: Remember to put header = TRUE as an extra argument. 
+  Output: Read in the 'Fish_landings.csv' file from your working directory using the 'read.csv()' function. Store the data as 'fish_data' and assign the result to an object called 'fish_data'. 
+  CorrectAnswer: fish_data <- read.csv("Fish_landings.csv")
+  AnswerTests: any_of_exprs('fish_data <- read.csv("Fish_landings.csv")', 'fish_data = read.csv("Fish_landings.csv")', 'fish_data = read.csv(file = "Fish_landings.csv")', 'fish_data <- read.csv(file = "Fish_landings.csv")', 'fish_data <- read.csv(file = "Fish_landings.csv")', 'fish_data = read.csv(file = "Fish_landings.csv")') 
+  Hint: Use the same approach as with read.table(). 
   
 - Class: figure
   Output: ....
