@@ -103,13 +103,13 @@
   Output: To better understand the different classes of object in R, let's create some objects of different class for practice. 
   
 - Class: cmd_question
-  Output:  To know the class of an object in your environment you can use the "class()" function and put the name of the object inside the round brackets (without the quotes, just like you would at the prompt). Try to ask R what the class of the "hatch" object is.
+  Output:  To know the class of an object in your environment you can use the "class()" function and put the name of the object inside the round brackets (without the quotes, just like you would at the prompt). Try to ask R what the class of the "hatch" object is.  
   CorrectAnswer: class(hatch)
   AnswerTests: omnitest(correctExpr='class(hatch)')
   Hint: Type; class(hatch)  
   
 - Class: text
-  Output: The "hatch" object is thus of class numeric. Now, let's create an object with character class.
+  Output: The "hatch" object is thus of class numeric. Whenever we write something between the brackets in a function call we are giving a value to an argument of the function. These arguments gives us a lot of flexibility in using these functions. For exemple, the "class()" function can be used to query the class of any object simply by giving any object's name as an argument. Now, let's create an object with character class.
   
 - Class: cmd_question
   Output:  Type the name of the species in between quotes ("") and assign it to a object called "sp". The species name is Caretta caretta. 
