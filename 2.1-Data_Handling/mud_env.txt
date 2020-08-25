@@ -1,17 +1,16 @@
-# environmental variables measured on the Hakon Mosby mud volcano.
-sample	location	mediangrainsize	mud	oxygenpenetrationdepth	H2S	chla
-center1	center	22	75	1	70	25
-center2	center	24	80	3	75	26
-center3	center	32	78	2	83	30
-mats1	mats	21	82	0	90	21
-mats2	mats	20	84	0	85	28
-mats3	mats	24	75	0	88	23
-control1	control	23	85	50	0	56
-control2	control	22	90	48	0	44
-control3	control	20	82	52	0	42
-pogonophora1	pogo	22	80	35	0	35
-pogonophora2	pogo	24	84	32	0	36
-pogonophora3	pogo	28	82	39	0	39
-rim1	rim	24	86	48	0	25
-rim2	rim	19	89	42	0	29
-rim3	rim	22	81	46	0	26
+"sample" "location" "mediangrainsize" "mud" "oxygenpenetrationdepth" "H2S" "chla"
+"1" "center1" "center" 22 75 1 70 25
+"2" "center2" "center" 24 80 3 75 26
+"3" "center3" "center" 32 78 2 83 30
+"4" "mats1" "mats" 21 82 0 90 21
+"5" "mats2" "mats" 20 84 0 85 28
+"6" "mats3" "mats" 24 75 0 88 23
+"7" "control1" "control" 23 85 50 0 56
+"8" "control2" "control" 22 90 48 0 44
+"9" "control3" "control" 20 82 52 0 42
+"10" "pogonophora1" "pogo" 22 80 35 0 35
+"11" "pogonophora2" "pogo" 24 84 32 0 36
+"12" "pogonophora3" "pogo" 28 82 39 0 39
+"13" "rim1" "rim" 24 86 48 0 25
+"14" "rim2" "rim" 19 89 42 0 29
+"15" "rim3" "rim" 22 81 46 0 26
