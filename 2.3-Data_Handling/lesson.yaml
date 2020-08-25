@@ -7,7 +7,7 @@
   Version: 2.4.5
 
 - Class: text
-  Output: In the previous two lessons, we learned to read in data, operate on them, now we will move a notch higher. In this tutorial, you will learn about 'LOGICAL INDEXING' and apply the technique on real data. Grab your seat belt!!!
+  Output: In the previous two lessons, we learned to read in data, operate on them, now we will move a notch higher. In this tutorial, you will learn about 'LOGICAL INDEXING' and apply the technique on real data. Fasten your seat belt!!!
   
 - Class: text
   Output: You can index the number using the technique learned before. But for the next one, we will teach you one new way of indexing which will help you when working with real data. It's called "LOGICAL INDEXING".
@@ -16,7 +16,7 @@
   Output: Basically, it means instead of using character indexing or number indexing, we use a "logical operator". Wait a minute, what is a "logical operator"?
 
 - Class: figure
-  Output: The logical operator you need to know in 'R' is shown on your plot viewer. Can you see it. 
+  Output: The logical operator you need to know in 'R' is shown on your plot viewer. Can you see it? ---- > 
   Figure: plot_logical_operator.R
   FigureType: new
   
