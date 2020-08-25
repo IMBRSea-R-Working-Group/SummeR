@@ -73,7 +73,7 @@
 
 
 - Class: text
-  Output: So, let's assign this data to an R object so we can do some fantastic things with it. We have used the assignement operator in the Introduction lesson, and we will now need it again.
+  Output: So, let's assign this data into an R object so we can do some fantastic things with it. To do so, we use the ideas from the previous lesson on assignment.
 
 - Class: cmd_question
   Output: Read in the data as in the previous question but this time, rather then letting R print the results to the console, assign the result to an object called 'mud_env' using the assignement operator.

@@ -2,6 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-*.md
+README.md
 IMBRSeaR
-*.Rproj
+SummeR.Rproj
