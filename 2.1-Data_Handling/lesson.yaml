@@ -82,7 +82,7 @@
   Output: One last point. Since we already imported the data, it would be nice to keep this data in the session to that we can start working on it. Isn't it?
 
 - Class: text
-  Output: So, let assign this data into an R object so we can do some fantastic things with it. To do so, we use the ideas from the previous lesson on assignment.
+  Output: So, let's assign this data into an R object so we can do some fantastic things with it. To do so, we use the ideas from the previous lesson on assignment.
 
 - Class: cmd_question
   Output: Read in the data as in the previous question but this time assign the data to 'mud_env' using what you learnt from the other lesson.
